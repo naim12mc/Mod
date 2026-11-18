@@ -13,11 +13,16 @@ repositories {
         filter { includeGroupAndSubgroups 'com.geckolib' }
     }
 }
+
 dependencies {
     minecraft "com.mojang:minecraft:${project.minecraft_version}"
-    modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
-    modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
-    modImplementation "com.geckolib:geckolib-fabric-${project.minecraft_version}:${project.geckolib_version}"
+
+    implementation "net.fabricmc:fabric-loader:${project.loader_version}"
+
+    implementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
+
+    implementation "com.geckolib:geckolib-fabric-${project.minecraft_version}:${project.geckolib_version}"
+}
 }
 processResources {
     inputs.property 'version', project.version
