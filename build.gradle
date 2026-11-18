@@ -1,19 +1,36 @@
+
 plugins {
     id 'net.fabricmc.fabric-loom' version '1.17.17'
     id 'maven-publish'
 }
+
+// Información del mod NAIMSAURIA
 version = project.mod_version
 group = project.maven_group
-base { archivesName = project.archives_base_name }
 
+base {
+    archivesName = project.archives_base_name
+}
+
+// Repositorios
 repositories {
     mavenCentral()
+
     exclusiveContent {
-        forRepository { maven { name = 'GeckoLib'; url = 'https://dl.cloudsmith.io/public/geckolib3/geckolib/maven/' } }
-        filter { includeGroupAndSubgroups 'com.geckolib' }
+        forRepository {
+            maven {
+                name = 'GeckoLib'
+                url = uri('https://dl.cloudsmith.io/public/geckolib3/geckolib/maven/')
+            }
+        }
+
+        filter {
+            includeGroupAndSubgroups('com.geckolib')
+        }
     }
 }
 
+// Dependencias para Minecraft Java 26.2
 dependencies {
     minecraft "com.mojang:minecraft:${project.minecraft_version}"
 
@@ -23,13 +40,30 @@ dependencies {
 
     implementation "com.geckolib:geckolib-fabric-${project.minecraft_version}:${project.geckolib_version}"
 }
-}
+
+// Recursos del mod
 processResources {
     inputs.property 'version', project.version
-    filesMatching('fabric.mod.json') { expand 'version': inputs.properties.version }
+
+    filesMatching('fabric.mod.json') {
+        expand 'version': project.version
+    }
 }
+
+// Java 25
 java {
-    toolchain.languageVersion = JavaLanguageVersion.of(25)
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(25)
+    }
+
+    sourceCompatibility = JavaVersion.VERSION_25
+    targetCompatibility = JavaVersion.VERSION_25
+
     withSourcesJar()
 }
-tasks.withType(JavaCompile).configureEach { options.release = 25 }
+
+// Compilación
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+    options.release = 25
+}
