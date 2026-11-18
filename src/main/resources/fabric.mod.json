@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "id": "naimsauria",
+  "version": "${version}",
+  "name": "NAIMSAURIA: El Despertar de los Cinco Titanes",
+  "description": "Prototipo de combate contra NAIMSAUR PRIME. Objetivo Minecraft Java 26.2.",
+  "authors": ["NAIMSAURIA - proyecto original"],
+  "environment": "*",
+  "entrypoints": {
+    "main": ["net.naimsauria.titanes.NaimsauriaMod"],
+    "client": ["net.naimsauria.titanes.client.NaimsauriaClient"]
+  },
+  "depends": {
+    "fabricloader": ">=0.19.3",
+    "minecraft": "=26.2",
+    "java": ">=25",
+    "fabric-api": "*",
+    "geckolib": ">=5.5.5"
+  }
+}

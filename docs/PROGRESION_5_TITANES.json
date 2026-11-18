@@ -1,0 +1,62 @@
+{
+  "version": "26.2",
+  "estado": "Borrador de diseño; solo NAIMSAUR PRIME esta cableado en el mod (sin compilación verificada)",
+  "bosses": [
+    {
+      "id": "rex_cataclismo",
+      "arena": "crater_volcanico",
+      "phases": [
+        "fuerza",
+        "furia_volcanica",
+        "extincion"
+      ],
+      "reliquia": "corazon_volcan",
+      "estado": "pendiente"
+    },
+    {
+      "id": "leviatan_abisal",
+      "arena": "templo_oceano",
+      "phases": [
+        "caza",
+        "corrientes",
+        "abismo_absoluto"
+      ],
+      "reliquia": "perla_abismo",
+      "estado": "pendiente"
+    },
+    {
+      "id": "triceratops_ancestral",
+      "arena": "santuario_selva",
+      "phases": [
+        "defensa",
+        "raices",
+        "furia_naturaleza"
+      ],
+      "reliquia": "cuerno_ancestro",
+      "estado": "pendiente"
+    },
+    {
+      "id": "emperador_tormentas",
+      "arena": "templo_montanas",
+      "phases": [
+        "vuelo",
+        "tempestad",
+        "juicio_celestial"
+      ],
+      "reliquia": "pluma_tempestad",
+      "estado": "pendiente"
+    },
+    {
+      "id": "naimsaur_prime",
+      "arena": "ciudadela_primordial",
+      "phases": [
+        "despertar",
+        "energia",
+        "evolucion",
+        "eclipse_final"
+      ],
+      "reliquia": "nucleo_saurio_omega",
+      "estado": "codigo_y_recursos_beta"
+    }
+  ]
+}
