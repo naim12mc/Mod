@@ -25,7 +25,7 @@ jobs:
           gradle-version: '9.5.1'
 
       - name: Compilar mod
-        run: gradle build --stacktrace
+        run: python3 fix_naimsauria_26_2.py && gradle build --stacktrace
 
       - name: Guardar JAR
         if: success()
